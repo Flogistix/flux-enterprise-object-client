@@ -1,6 +1,6 @@
 # Flux Enterprise Objects
 
-Flux Enterprise Objects is secure API for retreiving information on Flogistix units on a customers location. 
+Flux Enterprise Objects is secure API for retrieving information on Flogistix units on a customers location. 
 
 The Flux Enterprise Objects API is secured by Auth0 and the client must authorize to Auth0 and retrieve a Bearer Token that is to be used on API calls to retrieve records.
 
