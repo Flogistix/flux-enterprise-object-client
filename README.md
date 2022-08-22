@@ -5,8 +5,8 @@ Flux Enterprise Objects is secure API for retrieving information on Flogistix un
 The Flux Enterprise Objects API is secured by Auth0 and the client must authorize to Auth0 and retrieve a Bearer Token that is to be used on API calls to retrieve records.
 
 The base url of the Flux Enterprise Objects is as follows:  
-DEV - `https://dev-api.axil.ai/axil/enterprise-objects/`  
-PRD - `https://api.axil.ai/axil/enterprise-objects/`  
+Development - `https://dev-api.axil.ai/axil/enterprise-objects/`  
+Production - `https://api.axil.ai/axil/enterprise-objects/`  
 
 ### Get Asset Info  
 HTTP Verb: `GET`  
@@ -57,8 +57,11 @@ Response:
 ```
 
 ### Search Asset Info  
+When searching for units, the default is to only return 20 assets. The rest of the assets are paged through a queryString parameter called `page`. This allows the consumer to search through all of the results by incereasing the page number. This is an optional item, and is zero based i.e. starts at 0.
+
+
 HTTP Verb: `GET`  
-Url: `https://dev-api.axil.ai/axil/enterprise-objects/assets?search={search criteria}`  
+Url: `https://dev-api.axil.ai/axil/enterprise-objects/assets?search={search criteria}&page={page Number}`  
 Body: None  
 Response:
 ```
