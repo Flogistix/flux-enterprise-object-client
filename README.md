@@ -115,3 +115,64 @@ Response:
   "executionTime": "{Time took to run search}"
 }
 ```
+
+### All Assets
+To return all of the unit information for your company, you can use the /all endpoint.
+This will have a similar respoonse as the search functionality.
+
+
+HTTP Verb: `GET`  
+Url: `https://dev-api.axil.ai/axil/enterprise-objects/all`
+Body: None  
+Response:
+```
+{
+  "totalCount": {result count},
+  "assets": [
+    {
+      "netsuiteId": {Internal Id},
+      "name": "{Unit-Name}",
+      "organization": {
+        "netsuiteId": {Internal Organization Id},
+        "name": "{Customer Organization Name}",
+        "orgId": {Internal Id}
+      },
+      "site": {
+        "netsuiteId": {Internal Id},
+        "name": "{Customer Site Name}",
+        "siteId": {Internal Id}
+      },
+      "operatingArea": {
+        "netsuiteId": {Internal Id},
+        "name": "{Operating Area Location}"
+      },
+      "mechanic": {
+        "netsuiteId": {Internal Id},
+        "name": "{Mechanic Name}",
+        "email": "{Mechanic Email}",
+        "phone": "{Mechanic Phone}"
+      },
+      "transferOrderStatusId": {Internal Transfer Order Status Id},
+      "transferOrderStatus": "{Internal Transfer Order Status}",
+      "assetTypeId": {Internal Asset Type Id},
+      "assetType": "{Internal Asset Type}",
+      "ipAddress": "{IP Address}",
+      "id": {Internal Id},
+      "deviceId": {Internal Device Id},
+      "ipInfo": {
+        "port": "{Communication Port}"
+      },
+      "connectivityInfo": {
+        "lastUpdatedBy": "{User Last Verified Connection Status}",
+        "status": "{Last Connection Status}",
+        "lastUpdateTime": {Unix Timestamp of Last Connection Check}
+      },
+      "assetId": {Asset Id from Flux Realtime}
+    },
+    {
+      ... possibly multiple ...
+    }
+  ],
+  "executionTime": "{Time took to run search}"
+}
+```
