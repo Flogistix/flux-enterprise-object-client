@@ -10,7 +10,7 @@ Production - `https://api.axil.ai/axil/enterprise-objects/`
 
 ### Get Asset Info  
 HTTP Verb: `GET`  
-Url: `https://dev-api.axil.ai/axil/enterprise-objects/assets/{axil-id}`  
+Url: `https://dev-api.axil.ai/axil/enterprise-objects/assets/{netsuite-id}`  
 Body: None  
 Response:
 ```
@@ -55,6 +55,14 @@ Response:
   "assetId": {Asset Id from Flux Realtime}
 }
 ```
+
+### Searching by Key
+HTTP Verb: `GET`  
+Url: `https://dev-api.axil.ai/axil/enterprise-objects/assets?{dict_key}={value}`
+Example: `https://dev-api.axil.ai/axil/enterprise-objects/assets?driver=GED`
+`https://dev-api.axil.ai/axil/enterprise-objects/assets?name=12345`
+Body: None 
+This can return any list of units or specific unit that match the property you provided. For example, you can get the list of all of the units that have a driver of GED, the single unit with the name = 12345, etc.
 
 ### Search Asset Info  
 When searching for units, the default is to only return 20 assets. The rest of the assets are paged through a queryString parameter called `page`. This allows the consumer to search through all of the results by incereasing the page number. This is an optional item, and is zero based i.e. starts at 0.
@@ -118,8 +126,7 @@ Response:
 
 ### All Assets
 To return all of the unit information for your company, you can use the /all endpoint.
-This will have a similar respoonse as the search functionality.
-
+This will have a similar respoonse as the search functionality. You can also utilize a size query parameter to get all results.
 
 HTTP Verb: `GET`  
 Url: `https://dev-api.axil.ai/axil/enterprise-objects/all`
