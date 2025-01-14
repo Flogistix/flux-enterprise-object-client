@@ -5,12 +5,12 @@ Flux Enterprise Objects is secure API for retrieving information on Flogistix un
 The Flux Enterprise Objects API is secured by Auth0 and the client must authorize to Auth0 and retrieve a Bearer Token that is to be used on API calls to retrieve records.
 
 The base url of the Flux Enterprise Objects is as follows:  
-Development - `https://dev-api.axil.ai/axil/enterprise-objects/`  
-Production - `https://api.axil.ai/axil/enterprise-objects/`  
+Development - `https://dev-api.axil.ai/enterprise-objects/`  
+Production - `https://api.axil.ai/enterprise-objects/`  
 
 ### Get Asset Info  
 HTTP Verb: `GET`  
-Url: `https://dev-api.axil.ai/axil/enterprise-objects/assets/{netsuite-id}`  
+Url: `https://dev-api.axil.ai/enterprise-objects/assets/{netsuite-id}`  
 Body: None  
 Response:
 ```
@@ -58,9 +58,9 @@ Response:
 
 ### Searching by Key
 HTTP Verb: `GET`  
-Url: `https://dev-api.axil.ai/axil/enterprise-objects/assets?{dict_key}={value}`
-Example: `https://dev-api.axil.ai/axil/enterprise-objects/assets?driver=GED`
-`https://dev-api.axil.ai/axil/enterprise-objects/assets?name=12345`
+Url: `https://dev-api.axil.ai/enterprise-objects/assets?{dict_key}={value}`
+Example: `https://dev-api.axil.ai/enterprise-objects/assets?driver=GED`
+`https://dev-api.axil.ai/enterprise-objects/assets?name=12345`
 Body: None 
 This can return any list of units or specific unit that match the property you provided. For example, you can get the list of all of the units that have a driver of GED, the single unit with the name = 12345, etc.
 
@@ -69,7 +69,7 @@ When searching for units, the default is to only return 20 assets. The rest of t
 
 
 HTTP Verb: `GET`  
-Url: `https://dev-api.axil.ai/axil/enterprise-objects/assets?search={search criteria}&page={page Number}`  
+Url: `https://dev-api.axil.ai/enterprise-objects/assets?search={search criteria}&page={page Number}`  
 Body: None  
 Response:
 ```
@@ -129,7 +129,8 @@ To return all of the unit information for your company, you can use the /all end
 This will have a similar respoonse as the search functionality. You can also utilize a size query parameter to get all results.
 
 HTTP Verb: `GET`  
-Url: `https://dev-api.axil.ai/axil/enterprise-objects/all`
+Url: `https://dev-api.axil.ai/enterprise-objects/all?size=1000`
+Prod Url: `https://api.axil.ai/enterprise-objects/all?size=1000`
 Body: None  
 Response:
 ```
